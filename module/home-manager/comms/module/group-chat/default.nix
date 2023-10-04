@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./module/discord.nix
+  ];
+}

@@ -1,0 +1,65 @@
+{ pkgs, ... }:
+
+{
+  # TODO Arkenfox
+  # https://github.com/arkenfox/user.js/wiki/4.1-extensions
+  # https://github.com/dwarfmaster/arkenfox-nixos
+  # TODO Extension Data
+  programs = {
+    firefox = {
+      enable = true;
+      profiles.default = {
+        id = 0;
+        name = "Default";
+        #isDefault = true;
+	    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          export-tabs-urls-and-titles
+          old-reddit-redirect
+          rust-search-extension
+          single-file
+          skip-redirect
+          sponsorblock
+          tree-style-tab
+          ublock-origin
+        ];
+        bookmarks = [
+          {
+            name = "wikipedia";
+            tags = [ "wiki" ];
+            keyword = "wiki";
+            url = "https://en.wikipedia.org/";
+          }
+          {
+            name = "kernel.org";
+            url = "https://www.kernel.org";
+          }
+	      {
+            name = "nix homepage";
+            tags = [ "nix" ];
+            url = "https://nixos.org/";
+          }
+          {
+            name = "nix wiki";
+            tags = [ "wiki" "nix" ];
+            url = "https://nixos.wiki/";
+          }
+          {
+            name = "NUR Search";
+            tags = [ "nix" ];
+            url = "https://nur.nix-community.org/";
+          }
+          {
+            name = "arch wiki";
+            tags = [ "wiki" "arch" ];
+            url = "https://wiki.archlinux.org/";
+          }
+          {
+            name = "emuwiki";
+            tags = [ "wiki" ];
+            url = "https://emulation.gametechwiki.com/index.php/Main_Page";
+          }
+        ];
+      };
+    };
+  };
+}

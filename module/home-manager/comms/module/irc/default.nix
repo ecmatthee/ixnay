@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./module/weechat.nix
+  ];
+}

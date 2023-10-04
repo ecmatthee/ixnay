@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./module/onionshare.nix
+  ];
+}

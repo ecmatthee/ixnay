@@ -1,0 +1,21 @@
+{
+  imports = [
+    ./module/bat.nix
+    ./module/btop.nix
+    ./module/duf.nix
+    ./module/eza.nix
+    ./module/fd.nix
+    ./module/fzf.nix
+    ./module/git.nix
+    ./module/hyfetch.nix
+    ./module/jq.nix
+    ./module/lazygit.nix
+    ./module/less.nix
+    ./module/ncdu.nix
+    ./module/pv.nix
+    ./module/ranger.nix
+    ./module/ripgrep.nix
+    ./module/scrcpy.nix
+    ./module/sysstat.nix
+  ];
+}
