@@ -5,6 +5,11 @@
   services = {
     syncthing = {
       enable = true;
+      systemService = true;
+      openDefaultPorts = true;
+      user = "syncthing";
+      group = "syncthing";
+      datadir = "/home/syncthing";
     };
   };
 }
