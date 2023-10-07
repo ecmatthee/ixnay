@@ -1,6 +1,6 @@
 {
   services.gammastep = {
     enable = true;
-    provider = "geoclue";
+    provider = "geoclue2";
   };
 }
