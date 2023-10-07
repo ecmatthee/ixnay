@@ -66,6 +66,7 @@
   systemd = {
     network = {
       enable = true;
+      wait-online.enable = false;
       #netdevs = {
       #  "10-wg0" = {
       #    netdevConfig = {
