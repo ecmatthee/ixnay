@@ -2,6 +2,7 @@
   imports = [
     ./data
     ./module/foot.nix
+    ./module/gammastep.nix
     ./module/hyprland.nix
     ./module/hyprpaper.nix
     ./module/mako.nix
