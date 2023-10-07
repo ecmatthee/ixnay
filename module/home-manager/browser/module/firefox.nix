@@ -59,6 +59,51 @@
             url = "https://emulation.gametechwiki.com/index.php/Main_Page";
           }
         ];
+        search = {
+          engines = {
+              "Nix Packages" = {
+                urls = [{
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    { name = "channel"; value = "unstable"; }
+                    { name = "type"; value = "packages"; }
+                    { name = "query"; value = "{searchTerms}"; }
+                  ];
+                }];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@np" ];
+              };
+              "Nix Options" = {
+                urls = [{
+                  template = "https://search.nixos.org/options";
+                  params = [
+                    { name = "channel"; value = "unstable"; }
+                    { name = "type"; value = "packages"; }
+                    { name = "query"; value = "{searchTerms}"; }
+                  ];
+                }];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@no" ];
+              };
+              "NixOS Wiki" = {
+                urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@nw" ];
+              };
+              "Arch Linux Wiki" = {
+                urls = [{ template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; }];
+                iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+                updateInterval = 24 * 60 * 60 * 1000;
+                definedAliases = [ "@aw" ];
+              };
+              "Bing".metaData.hidden = true;
+              "Amazon".metaData.hidden = true;
+              "Google".metaData.alias = "@g";
+              "Wikipedia".metaData.alias = "@w";
+          };
+          force = true;
+          order = [];
+        };
       };
     };
   };
