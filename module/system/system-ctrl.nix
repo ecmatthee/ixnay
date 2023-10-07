@@ -3,8 +3,9 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      smartmontools
       brightnessctl
+      hdparm
+      smartmontools
     ];
   };
 
@@ -12,6 +13,7 @@
     enable = true;
     #cpuFreqGovernor = "performance";
     #cpuFreqGovernor = "powersave";
+    powertop.enable = true;
   };
 
   services = {

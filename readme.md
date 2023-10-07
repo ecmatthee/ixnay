@@ -1,4 +1,6 @@
 # TODO
++ DE
+    - Wrap sound + backlight controll to keybinds
 + Gamesave Manager
 + Monero
 + Syncthing
