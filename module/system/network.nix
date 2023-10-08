@@ -181,9 +181,9 @@
       openFirewall = true;
     };
 
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-    };
+    #jellyfin = {
+    #  enable = true;
+    #  openFirewall = true;
+    #};
   };
 }
