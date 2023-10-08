@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+# TODO Refactor & Update Scanner, Printer, Avahi config
+# Remove deprecated groups
+#   # https://wiki.archlinux.org/title/SANE#Permission_problem
 {
   # Scanning Setup
   hardware = {
