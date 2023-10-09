@@ -12,7 +12,7 @@
 
   zramSwap = {
     enable = true;
-    writebackDevice = "/dev/disk/by-partlabel/zramwbd";
+    #writebackDevice = "/dev/disk/by-partlabel/zramwbd";
     algorithm = "zstd";
     memoryPercent = 50;
   };
