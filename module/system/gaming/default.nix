@@ -5,6 +5,6 @@
     ./module/steam.nix
     ./module/vkbasalt.nix
     ./module/wine.nix
-    #./module/aagl.nix
+    ./module/aagl.nix
   ];
 }
