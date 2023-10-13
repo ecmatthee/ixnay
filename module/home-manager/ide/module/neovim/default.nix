@@ -129,6 +129,26 @@
         #  '';
         #}
 
+        # TODO
+        # nvim-lint
+        # flutter-tools
+        # sqls
+        # tsc.nvim
+        # neorg
+        # peek
+        # nvim-toc
+        # Pantran.nvim
+        # peekup
+        # neoclip
+        # trouble
+        # oil.nvim
+        # scnvim
+        # dap-ui
+        # conjure
+        # package-info.nvim
+        # crates.nvim
+        # https://soundimage.org/
+
         # UI
         {
           plugin = kanagawa-nvim;
