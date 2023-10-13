@@ -9,11 +9,11 @@
       url =  "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence = {
-      url = "github:nix-community/impermanence";
-    };
     nur = {
       url = "github:nix-community/NUR";
+    };
+    impermanence = {
+      url = "github:nix-community/impermanence";
     };
     fenix = {
       url = "github:nix-community/fenix";
