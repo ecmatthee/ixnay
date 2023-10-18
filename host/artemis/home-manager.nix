@@ -9,6 +9,7 @@
       imports = [
         #inputs.impermanence.nixosModules.home-manager.impermanence
         #../../module/home-manager/ephemeral-home.nix
+        inputs.arkenfox.hmModules.default
         ../../module/home-manager/browser
         ../../module/home-manager/cli-util
         ../../module/home-manager/comms
