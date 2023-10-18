@@ -1,46 +1,156 @@
 { pkgs, ... }:
 
 {
-  # TODO Arkenfox
-  # https://github.com/arkenfox/user.js/wiki/4.1-extensions
-  # https://github.com/dwarfmaster/arkenfox-nixos
   # TODO Extension Data
   programs = {
     firefox = {
       enable = true;
+      arkenfox = {
+        enable = true;
+        version = "117.0";
+      };
       profiles.default = {
         id = 0;
         name = "Default";
         #isDefault = true;
+        arkenfox = {
+          enable = true;
+          # INDEX:
+          # 0000: TOPLEVEL
+          # 0100: STARTUP
+          # 0200: GEOLOCATION / LANGUAGE / LOCALE
+          # 0300: QUIETER FOX
+          # 0400: SAFE BROWSING
+          # 0600: BLOCK IMPLICIT OUTBOUND
+          # 0700: DNS / DoH / PROXY / SOCKS
+          # 0800: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS
+          # 0900: PASSWORDS
+          # 1000: DISK AVOIDANCE
+          # 1200: HTTPS (SSL/TLS / OCSP / CERTS / HPKP)
+          # 1400: FONTS
+          # 1600: REFERERS
+          # 1700: CONTAINERS
+          # 2000: PLUGINS / MEDIA / WEBRTC
+          # 2400: DOM (DOCUMENT OBJECT MODEL)
+          # 2600: MISCELLANEOUS
+          # 2700: ETP (ENHANCED TRACKING PROTECTION)
+          # 2800: SHUTDOWN & SANITIZING
+          # 4500: RFP (RESIST FINGERPRINTING)
+          # 5000: OPTIONAL OPSEC
+          # 5500: OPTIONAL HARDENING
+          # 6000: DON'T TOUCH
+          # 7000: DON'T BOTHER
+          # 8000: DON'T BOTHER: FINGERPRINTING
+          # 9000: NON-PROJECT RELATED
+          # 9999: DEPRECATED / REMOVED / LEGACY / RENAMED
+
+          "0000" = {
+            enable = true;
+          };
+          "0100" = {
+            enable = true;
+          };
+          "0200" = {
+            enable = true;
+          };
+          "0300" = {
+            enable = true;
+          };
+          "0400" = {
+            enable = true;
+          };
+          "0600" = {
+            enable = true;
+          };
+          "0700" = {
+            enable = true;
+            "0710"."network.trr.mode" = {
+              enable = true;
+              value = 5;
+            };
+          };
+          "0800" = {
+            enable = true;
+          };
+          "0900" = {
+            enable = true;
+          };
+          "1000" = {
+            enable = true;
+          };
+          "1200" = {
+            enable = true;
+          };
+          "1400" = {
+            enable = true;
+          };
+          "1600" = {
+            enable = true;
+          };
+          "1700" = {
+            enable = true;
+          };
+          "2000" = {
+            enable = true;
+          };
+          "2400" = {
+            enable = true;
+          };
+          "2600" = {
+            enable = true;
+          };
+          "2700" = {
+            enable = true;
+          };
+          "2800" = {
+            enable = true;
+          };
+          "4500" = {
+            enable = true;
+            "4504"."privacy.resistFingerprinting.letterboxing".enable = false;
+          };
+          "5000" = {
+            enable = true;
+            "5003"."signon.rememberSignons".enable = true;
+            "5010"."browser.urlbar.suggest.topsites".enable = true;
+          };
+        };
 	    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           export-tabs-urls-and-titles
+          sidebery
+          #kagi-search
+          multi-account-containers
           old-reddit-redirect
-          rust-search-extension
           single-file
           skip-redirect
           sponsorblock
-          tree-style-tab
           ublock-origin
         ];
         bookmarks = [
           {
-            name = "wikipedia";
+            name = "Android Source";
+            tags = [ "dev" ];
+            url = "https://source.android.com/";
+          }
+          {
+            name = "MDN";
+            tags = [ "dev" ];
+            url = "https://developer.mozilla.org/";
+          }
+          {
+            name = "Wikipedia";
             tags = [ "wiki" ];
             keyword = "wiki";
             url = "https://en.wikipedia.org/";
           }
-          {
-            name = "kernel.org";
-            url = "https://www.kernel.org";
-          }
 	      {
-            name = "nix homepage";
+            name = "Nix Homepage";
             tags = [ "nix" ];
             url = "https://nixos.org/";
           }
           {
-            name = "nix wiki";
-            tags = [ "wiki" "nix" ];
+            name = "Nix Wiki";
+            tags = [ "nix" ];
             url = "https://nixos.wiki/";
           }
           {
@@ -49,14 +159,44 @@
             url = "https://nur.nix-community.org/";
           }
           {
-            name = "arch wiki";
-            tags = [ "wiki" "arch" ];
+            name = "Arch Wiki";
+            tags = [ "arch" ];
             url = "https://wiki.archlinux.org/";
           }
           {
-            name = "emuwiki";
-            tags = [ "wiki" ];
+            name = "EMUwiki";
+            tags = [ "emulation" ];
             url = "https://emulation.gametechwiki.com/index.php/Main_Page";
+          }
+          {
+            name = "NXBrew";
+            tags = [ "piracy" ];
+            url = "https://nxbrew.com/";
+          }
+          {
+            name = "1337x";
+            tags = [ "piracy" ];
+            url = "https://1337x.to/";
+          }
+          {
+            name = "Fitgirl";
+            tags = [ "piracy" ];
+            url = "https://fitgirl-repacks.site/";
+          }
+          {
+            name = "MyAnonaMouse";
+            tags = [ "piracy" ];
+            url = "https://www.myanonamouse.net/";
+          }
+          {
+            name = "JustLightNovels";
+            tags = [ "piracy" ];
+            url = "https://www.justlightnovels.com/";
+          }
+          {
+            name = "ROMS Megathread";
+            tags = [ "piracy" ];
+            url = "https://r-roms.github.io/";
           }
         ];
         search = {
@@ -96,12 +236,43 @@
                 updateInterval = 24 * 60 * 60 * 1000;
                 definedAliases = [ "@aw" ];
               };
-              "Bing".metaData.hidden = true;
-              "Amazon".metaData.hidden = true;
-              "Google".metaData.alias = "@g";
-              "Wikipedia".metaData.alias = "@w";
+              "MDN" = {
+                urls = [{ template = "https://developer.mozilla.org/en-US/search?q={searchTerms}"; }];
+                iconUpdateURL = "https://developer.mozilla.org/favicon-48x48.cbbd161b.png";
+                updateInterval = 24 * 60 * 60 * 1000;
+                definedAliases = [ "@mdn" ];
+              };
+              "Kagi" = {
+                urls = [{ template = "https://kagi.com/search?q="; }];
+                iconUpdateURL = "https://kagi.com/favicon.ico";
+                updateInterval = 24 * 60 * 60 * 1000;
+                definedAliases = [ "@kg" ];
+              };
+              "Google" = {
+                metaData = {
+                  alias = "@g";
+                  hidden = true;
+                };
+              };
+              "Wikipedia (en)" = {
+                metaData = {
+                  alias = "@w";
+                  hidden = true;
+                };
+              };
+              "Bing" = {
+                metaData = {
+                  hidden = true;
+                };
+              };
+              "Amazon.com" = {
+                metaData = {
+                  hidden = true;
+                };
+              };
           };
           force = true;
+          default = "DuckDuckGo";
           order = [];
         };
       };

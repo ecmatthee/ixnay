@@ -23,6 +23,9 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    arkenfox = {
+      url = "github:dwarfmaster/arkenfox-nixos";
+    };
   };
 
   outputs = inputs @ { nixpkgs, home-manager, ... }:
