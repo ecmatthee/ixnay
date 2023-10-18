@@ -12,7 +12,6 @@ shell_settings() {
     IFS=$'\n\t'
 }
 
-
 finish() {
     echo "Script exited or terminated!"
 }
@@ -51,10 +50,12 @@ apply_zpool_settings() {
 }
 
 create_zfs_datasets() {
+    secret_folder="/nix/secret"
+
     local -A datasets
-    datasets["${pool_name}/enc"]="file:///key"
-    datasets["${pool_name}/media"]="file:///media.key"
-    datasets["${pool_name}/prj"]="file:///prj.key"
+    datasets["${pool_name}/data"]="file://${secret_folder}/data.key"
+    datasets["${pool_name}/media"]="file://${secret_folder}/media.key"
+    datasets["${pool_name}/prj"]="file://${secret_folder}/prj.key"
 
     for dataset in "${!datasets[@]}"; do
         local key="${datasets[$dataset]}"
