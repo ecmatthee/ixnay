@@ -11,6 +11,7 @@
     ./module/jq.nix
     ./module/lazygit.nix
     ./module/less.nix
+    ./module/mprocs.nix
     ./module/ncdu.nix
     ./module/pv.nix
     ./module/ranger.nix
