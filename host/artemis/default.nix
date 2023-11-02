@@ -23,7 +23,7 @@
       allowUnfree = true;
     };
     overlays = [
-      (import ../../overlay)
+      (import ../../overlays)
       inputs.nur.overlay
       inputs.fenix.overlays.default
     ];
@@ -32,29 +32,22 @@
   imports = [
     ./hardware-configuration.nix
     ./users.nix
-    ../../module/hardware/amd_cpu.nix
-    ../../module/hardware/amd_gpu.nix
-    ../../module/hardware/bluetooth.nix
-    #../../module/system/ephemeral.nix
-    ../../module/system/boot.nix
-    ../../module/system/console.nix
-    ../../module/system/font.nix
-    ../../module/system/gaming
-    ../../module/system/gnupg.nix
-    ../../module/system/network.nix
-    ../../module/system/postgresql.nix
-    ../../module/system/printer.nix
-    ../../module/system/security.nix
-    ../../module/system/shell.nix
-    ../../module/system/snowflake.nix
-    ../../module/system/swap.nix
-    ../../module/system/system-ctrl.nix
-    ../../module/system/timezoned.nix
-    ../../module/system/utils.nix
-    ../../module/system/virtualisation
-    #../../module/system/vpn.nix
-    ../../module/system/wayland.nix
-    ../../module/system/zfs.nix
+
+    ../../modules/hardware/amd_gpu.nix
+    ../../modules/hardware/bluetooth.nix
+    ../../modules/hardware/drive.nix
+    ../../modules/hardware/power_management.nix
+    ../../modules/hardware/rgb.nix
+    ../../modules/hardware/screen.nix
+
+    ../../modules/base
+    ../../modules/database
+    ../../modules/gaming
+    ../../modules/network
+    ../../modules/printer
+    ../../modules/system
+    ../../modules/virtualisation
+    ../../modules/wayland
   ];
 
   networking = {

@@ -1,9 +1,21 @@
-{ config, lib, modulesPath, ... }:
+{ config, lib, modulesPath, inputs, ... }:
 
 {
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
+
+    inputs.nixos-hardware.nixosModules.common-cpu-amd
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+    inputs.nixos-hardware.nixosModules.common-gpu-amd
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
   ];
+
+  hardware = {
+    enableAllFirmware = false;
+    enableRedistributableFirmware = true;
+  };
+
+  # TODO Remove unneeded kernel modules
 
   boot = {
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;

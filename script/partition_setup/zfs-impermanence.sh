@@ -40,6 +40,12 @@ declare_globals() {
     ZFS_BLANK_SNAPSHOT_ROOT="${ZFS_ROOT}@blank"
     ZFS_BLANK_SNAPSHOT_HOME="${ZFS_HOME}@blank"
     ZFS_ASHIFT=12
+    zfs create -o setuid=off -o devices=off -o sync=disabled -o mountpoint=/tmp <pool>/tmp
+    zfs create -o recordsize=8K \
+             -o primarycache=metadata \
+             -o mountpoint=/var/lib/postgres \
+             -o logbias=throughput \
+              <pool>/postgres
 }
 
 partition() {
