@@ -8,6 +8,7 @@
       domains = [
         "ecmatthee.com"
         "www.ecmatthee.com"
+        "immich.ecmatthee.com"
         "jelly.ecmatthee.com"
         "pdf.ecmatthee.com"
         "radicale.ecmatthee.com"

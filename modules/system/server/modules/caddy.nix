@@ -21,6 +21,11 @@
             "www.ecmatthee.com"
           ];
         };
+        "immich.ecmatthee.com" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:3001
+          '';
+        };
         "jelly.ecmatthee.com" = {
           extraConfig = ''
             reverse_proxy http://127.0.0.1:8096
