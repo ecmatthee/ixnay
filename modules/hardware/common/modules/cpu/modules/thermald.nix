@@ -1,0 +1,8 @@
+{
+  services = {
+    thermald = {
+      enable = true;
+    };
+  };
+}
+
