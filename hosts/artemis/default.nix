@@ -35,7 +35,7 @@
     ../../modules/system/core
     ../../modules/system/database
     ../../modules/system/gaming
-    # ../../modules/system/llm
+    ../../modules/system/llm
     ../../modules/system/printer
     ../../modules/system/server
     ../../modules/system/virtualisation
