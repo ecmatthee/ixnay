@@ -3,7 +3,9 @@
 {
   fonts = {
     packages = with pkgs; [
+      roboto
       inter
+      crimson-pro
       nerdfonts
       noto-fonts
       noto-fonts-extra
