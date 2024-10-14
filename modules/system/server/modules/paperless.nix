@@ -31,8 +31,7 @@ in
       port = 19998;
     };
     gotenberg = {
-      # enable = config.services.paperless.enable;
-      enable = false;
+      enable = config.services.paperless.enable;
       port = 23678;
     };
     postgresql = {
