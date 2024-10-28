@@ -4,7 +4,7 @@
   services = {
     cloudflare-dyndns = {
       enable = true;
-      proxied = true;
+      proxied = false;
       domains = [
         "ecmatthee.com"
         "www.ecmatthee.com"
