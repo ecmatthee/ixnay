@@ -6,6 +6,7 @@
     ./modules/bat.nix
     ./modules/btop.nix
     ./modules/duf.nix
+    ./modules/direnv.nix
     ./modules/eza.nix
     ./modules/fish.nix
     ./modules/fzf.nix
