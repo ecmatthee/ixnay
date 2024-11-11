@@ -14,7 +14,7 @@
         "radicale.ecmatthee.com"
         "mealie.ecmatthee.com"
         "paperless.ecmatthee.com"
-        "ollama.ecmatthee.com"
+        "llm.ecmatthee.com"
       ];
       apiTokenFile = "${config.sops.templates."ddns.conf".path}";
     };

@@ -51,11 +51,9 @@
             reverse_proxy http://127.0.0.1:28981
           '';
         };
-        "ollama.ecmatthee.com" = {
+        "llm.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:11434 {
-              header_up Host localhost:11434
-            }
+            reverse_proxy http://${builtins.toString config.services.open-webui.host}:${builtins.toString config.services.open-webui.port}
           '';
         };
       };

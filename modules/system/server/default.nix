@@ -7,6 +7,7 @@
     ./modules/mealie.nix
     ./modules/radicale.nix
     ./modules/stirling-pdf.nix
+    ./modules/open-webui.nix
     ./modules/paperless.nix
   ];
 }
