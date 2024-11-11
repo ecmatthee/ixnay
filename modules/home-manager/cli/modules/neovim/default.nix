@@ -32,7 +32,7 @@ in {
           ];
         };
       });
-      packages = {
+      packageDefinitions.replace = {
         nvix = {pkgs , ... }: {
           settings = {
             aliases = [ "vi" "vim" "nvim" ];
