@@ -53,7 +53,9 @@
         };
         "ollama.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:11434
+            reverse_proxy http://127.0.0.1:11434 {
+              header_up Host localhost:11434
+            }
           '';
         };
       };
