@@ -5,16 +5,9 @@
     cloudflare-dyndns = {
       enable = true;
       proxied = false;
-      domains = [
-        "ecmatthee.com"
+      domains = builtins.attrNames config.services.caddy.virtualHosts ++ [
+        # TODO Figure out how to itterate over aliases
         "www.ecmatthee.com"
-        "immich.ecmatthee.com"
-        "jelly.ecmatthee.com"
-        "pdf.ecmatthee.com"
-        "radicale.ecmatthee.com"
-        "mealie.ecmatthee.com"
-        "paperless.ecmatthee.com"
-        "llm.ecmatthee.com"
       ];
       apiTokenFile = "${config.sops.templates."ddns.conf".path}";
     };
