@@ -12,7 +12,7 @@ in
         DB_ENGINE = "postgres";
         # POSTGRES_PORT = config.services.postgresql.settings.port;
         # POSTGRES_SERVER = "/run/postgresql";
-        POSTGRES_URL_OVERRIDE = 
+        POSTGRES_URL_OVERRIDE =
           "postgresql://" + db +":@/" + db + "?host=/run/postgresql";
       };
     };

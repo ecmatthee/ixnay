@@ -1,3 +1,5 @@
+{config, ...}:
+
 {
   networking = {
     firewall = {
@@ -23,7 +25,7 @@
         };
         "immich.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:3001
+            reverse_proxy http://${builtins.toString config.services.immich.host}:${builtins.toString config.services.immich.port}
           '';
         };
         "jelly.ecmatthee.com" = {
@@ -33,22 +35,22 @@
         };
         "pdf.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:17834
+            reverse_proxy http://${builtins.toString config.services.stirling-pdf.environment.SERVER_ADDRESS}:${builtins.toString config.services.stirling-pdf.environment.SERVER_PORT}
           '';
         };
         "radicale.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:5232
+            reverse_proxy http://${builtins.toString (builtins.elemAt config.services.radicale.settings.server.hosts 0)}
           '';
         };
         "mealie.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:22364
+            reverse_proxy http://${builtins.toString config.services.mealie.listenAddress}:${builtins.toString config.services.mealie.port}
           '';
         };
         "paperless.ecmatthee.com" = {
           extraConfig = ''
-            reverse_proxy http://127.0.0.1:28981
+            reverse_proxy http://${builtins.toString config.services.paperless.address}:${builtins.toString config.services.paperless.port}
           '';
         };
         "llm.ecmatthee.com" = {

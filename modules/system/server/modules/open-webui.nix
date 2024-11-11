@@ -8,7 +8,7 @@
       environment = {
         WEBUI_AUTH = "True";
         ENABLE_LOGIN_FORM = "True";
-        ENABLE_SIGNUP = "True";
+        ENABLE_SIGNUP = "False";
         ADMIN_EMAIL = "llm@ecmatthee.com";
         ENABLE_OLLAMA_API = "True";
         OLLAMA_BASE_URL = "http://localhost:11434";
