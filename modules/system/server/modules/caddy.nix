@@ -51,6 +51,11 @@
             reverse_proxy http://127.0.0.1:28981
           '';
         };
+        "ollama.ecmatthee.com" = {
+          extraConfig = ''
+            reverse_proxy http://127.0.0.1:11434
+          '';
+        };
       };
     };
   };
