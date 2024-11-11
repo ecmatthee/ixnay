@@ -25,12 +25,14 @@
         content = ''
           CLOUDFLARE_API_TOKEN=${config.sops.placeholder."api/cloudflare"}
         '';
+        path = "/var/lib/sops/ddns.conf";
       };
       "radicale.htpasswd" = {
         owner = "radicale";
         content = ''
           ${config.sops.placeholder."service/radicale/username"}:${config.sops.placeholder."service/radicale/bcrypt"}
         '';
+        path = "/var/lib/sops/radicale.htpasswd";
       };
     };
   };
