@@ -6,7 +6,7 @@ in
 {
   services = {
     paperless = {
-      enable = true;
+      enable = false;
       port = 28981;
       passwordFile = config.sops.secrets."service/paperless".path;
       address = "127.0.0.1";
