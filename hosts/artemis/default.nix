@@ -1,12 +1,15 @@
+{ config, ...}:
+
 {
   system = {
     stateVersion = "24.05";
+    # stateVersion = config.system.nixos.release;
   };
 
   nix = {
     settings = {
-      sandbox = true;
       auto-optimise-store = true;
+      sandbox = true;
       experimental-features = [ "nix-command" "flakes" ];
     };
     gc = {
@@ -30,16 +33,9 @@
     ./hardware
     ./users.nix
 
-    ../../modules/stylix
-
-    ../../modules/system/core
-    ../../modules/system/database
-    ../../modules/system/gaming
-    ../../modules/system/llm
-    ../../modules/system/printer
-    ../../modules/system/server
-    ../../modules/system/virtualisation
-    ../../modules/system/wayland
+    ../../modules/nix
+    ../../modules/system
+    ../../modules/theme
   ];
 
   networking = {

@@ -6,7 +6,7 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = lib.mkOverride 900 "nvim";
-    VISUAL = lib.mkOverride 900 "nvim";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 }

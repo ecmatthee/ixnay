@@ -48,11 +48,6 @@
             reverse_proxy http://${builtins.toString config.services.mealie.listenAddress}:${builtins.toString config.services.mealie.port}
           '';
         };
-        "paperless.ecmatthee.com" = {
-          extraConfig = ''
-            reverse_proxy http://${builtins.toString config.services.paperless.address}:${builtins.toString config.services.paperless.port}
-          '';
-        };
         "llm.ecmatthee.com" = {
           extraConfig = ''
             reverse_proxy http://${builtins.toString config.services.open-webui.host}:${builtins.toString config.services.open-webui.port}

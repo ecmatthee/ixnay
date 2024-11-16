@@ -60,6 +60,21 @@
           }
         ];
       };
+      # moby = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   specialArgs = { inherit inputs; };
+      #   modules = [
+      #     stylix.nixosModules.stylix
+      #     nur.nixosModules.nur
+      #     sops-nix.nixosModules.sops
+      #     ./hosts/moby/default.nix
+      #     home-manager.nixosModules.home-manager {
+      #       imports = [
+      #         ./hosts/moby/home-manager.nix
+      #       ];
+      #     }
+      #   ];
+      # };
     };
   };
 }

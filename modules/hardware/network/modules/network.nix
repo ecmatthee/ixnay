@@ -30,6 +30,7 @@
     resolved = {
       enable = true;
       dnssec = "false";
+      llmnr = "true";
       domains = [ "~." ];
       fallbackDns = [
         "1.1.1.1#cloudflare-dns.com"
@@ -41,6 +42,7 @@
       ];
       extraConfig = ''
         DNSOverTLS=yes
+        MulticastDNS=false
       '';
     };
   };
@@ -49,36 +51,38 @@
     network = {
       enable = true;
       wait-online.enable = false;
-      networks."30-wired-universal" = {
-        matchConfig = {
-          Name = "en*";
+      networks = {
+        "30-wired-universal" = {
+          matchConfig = {
+            Name = "en*";
+          };
+          networkConfig = {
+            DHCP = "yes";
+          };
+          dhcpV4Config = {
+            RouteMetric = 10;
+            UseDNS = "false";
+          };
+          dhcpV6Config = {
+            RouteMetric = 10;
+          };
         };
-        networkConfig = {
-          DHCP = "yes";
-        };
-        dhcpV4Config = {
-          RouteMetric = 10;
-          UseDNS = "no";
-        };
-        dhcpV6Config = {
-          RouteMetric = 10;
-        };
-      };
 
-      networks."35-wireless-universal" = {
-        matchConfig = {
-          Name = "wl*";
-        };
-        networkConfig = {
-          DHCP = "yes";
-          IgnoreCarrierLoss = "3s";
-        };
-        dhcpV4Config = {
-          RouteMetric = 20;
-          UseDNS = "no";
-        };
-        dhcpV6Config = {
-          RouteMetric = 20;
+        "35-wireless-universal" = {
+          matchConfig = {
+            Name = "wl*";
+          };
+          networkConfig = {
+            DHCP = "yes";
+            IgnoreCarrierLoss = "3s";
+          };
+          dhcpV4Config = {
+            RouteMetric = 20;
+            UseDNS = "false";
+          };
+          dhcpV6Config = {
+            RouteMetric = 20;
+          };
         };
       };
     };

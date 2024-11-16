@@ -1,0 +1,5 @@
+{
+  nh = {
+    enable = true;
+  };
+}

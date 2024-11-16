@@ -1,5 +1,6 @@
 {
   imports = [
+    ./modules/avahi.nix
     ./modules/sendmail
     ./modules/firewall.nix
     ./modules/network.nix

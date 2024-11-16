@@ -10,6 +10,7 @@
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     ../../../../modules/hardware/common
+    ../../../../modules/hardware/network
   ];
 
   hardware = {

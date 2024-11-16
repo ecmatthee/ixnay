@@ -5,6 +5,7 @@
     decky-loader = {
       enable = true;
     };
+
     devices = {
       steamdeck = {
         enable = true;
@@ -12,11 +13,14 @@
         # enableGyroDsuService = true;
       };
     };
+
     steam = {
       enable = true;
       autoStart = true;
-      # user = "";
+      user = "ecm";
+      updater.splash = "steamos";
     };
+
     steamos = {
       useSteamOSConfig = true;
     };
