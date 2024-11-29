@@ -24,6 +24,7 @@
     ./modules/scanner.nix
     ./modules/security.nix
     ./modules/stirling-pdf.nix
+    ./modules/stylix.nix
     ./modules/video.nix
   ];
 

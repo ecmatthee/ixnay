@@ -35,7 +35,6 @@
 
     ../../modules/nix
     ../../modules/system
-    ../../modules/theme
   ];
 
   networking = {

@@ -1,3 +1,5 @@
+{ config, ...}:
+
 let
   cfg = config.ixnay.services.immich;
   db = "immich";

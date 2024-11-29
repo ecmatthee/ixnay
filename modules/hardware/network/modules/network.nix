@@ -61,7 +61,7 @@
           };
           dhcpV4Config = {
             RouteMetric = 10;
-            UseDNS = "false";
+            UseDNS = false;
           };
           dhcpV6Config = {
             RouteMetric = 10;
@@ -78,7 +78,7 @@
           };
           dhcpV4Config = {
             RouteMetric = 20;
-            UseDNS = "false";
+            UseDNS = false;
           };
           dhcpV6Config = {
             RouteMetric = 20;

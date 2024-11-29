@@ -2,8 +2,6 @@
 
 {
   home.packages = with pkgs; [
-      ffmpeg_6-full
-      flac
       # mp3val
       # Beets dependants
       # chromaprint
