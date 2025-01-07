@@ -8,7 +8,7 @@
       withVmaf = true;
       withMkvtoolnix = true;
     })
-    ffmpeg
+    ffmpeg-full
     # flac
     # subtitlecomposer
     subtitleedit

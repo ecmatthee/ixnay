@@ -29,7 +29,7 @@
     ./modules/imagemagick.nix
     ./modules/imv.nix
     ./modules/inkscape.nix
-    ./modules/itch.nix
+    # ./modules/itch.nix
     ./modules/jq.nix
     ./modules/kdenlive.nix
     ./modules/keepassxc.nix
